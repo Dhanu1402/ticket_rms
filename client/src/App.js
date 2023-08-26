@@ -1,5 +1,9 @@
-import { Button } from 'react-bootstrap';
+import Home from './pages/home/Home';
 
 export default function App() {
-  return <Button>Click me</Button>;
+  return (
+    <div className="App">
+      <Home />
+    </div>
+  );
 }
