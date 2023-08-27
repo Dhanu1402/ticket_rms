@@ -4,12 +4,12 @@ import AddTicketForm from '../../components/addTicketForm/AddTicketForm';
 import { useEffect, useState } from 'react';
 import { shortText } from '../../utils/validation';
 
-const initialFormData = { subject: '', issueDate: '', details: '' };
+const initialFormData = { subject: '', issueDate: '', detail: '' };
 
 const initialFormError = {
-  subject: 'false',
-  issueDate: 'false',
-  details: 'false',
+  subject: false,
+  issueDate: false,
+  detail: false,
 };
 
 export default function AddTicket() {
@@ -22,7 +22,7 @@ export default function AddTicket() {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData({ ...initialFormData, [name]: value });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleOnSubmit = async (e) => {

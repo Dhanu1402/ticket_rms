@@ -9,8 +9,9 @@ export default function AddTicketForm({
 }) {
   return (
     <Container className="add-new-ticket" mt-3 bg-light>
-      <h1 className="text-info text-center">Add new ticket</h1>
+      <h1 className="text-info text-center">Add New Ticket</h1>
       <hr />
+
       <Form autoComplete="off" onSubmit={handleOnSubmit}>
         <Form.Group as={Row}>
           <Form.Label column sm={3}>
@@ -20,13 +21,15 @@ export default function AddTicketForm({
             <Form.Control
               name="subject"
               value={formData.subject}
+              // minLength="3"
               maxLength="100"
               onChange={handleOnChange}
               placeholder="Subject"
               required
             />
+
             <Form.Text className="text-danger">
-              {formDataError.subject && 'subject is required!'}
+              {formDataError.subject && 'Subject is required!'}
             </Form.Text>
           </Col>
         </Form.Group>
@@ -47,10 +50,11 @@ export default function AddTicketForm({
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Details</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             as="textarea"
             name="detail"
+            rows="5"
             value={formData.detail}
             onChange={handleOnChange}
             required
@@ -58,7 +62,7 @@ export default function AddTicketForm({
         </Form.Group>
 
         <Button type="submit" variant="info" block>
-          Open Ticket
+          Login
         </Button>
       </Form>
     </Container>
